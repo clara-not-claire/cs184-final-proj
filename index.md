@@ -33,7 +33,8 @@ We anticipate running into a few challenges during this project, the main one be
 
 ### What we hope to achieve
 **Step 1**: 
-We want to try adding caustic effects to the walls submerged in water for a more realistic scene. TODO ADD MORE HERE
+- We want to try adding caustic effects to the walls submerged in water for a more realistic scene. TODO ADD MORE HERE
+
 **Step 2**:
 - We hope to try adding different light sources in the scene at different locations and directions. TODO ADD MORE HERE
 
