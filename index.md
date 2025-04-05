@@ -40,7 +40,7 @@ We anticipate running into a few challenges during this project, the main one be
 - We hope to try adding different light sources in the scene at different locations and directions. Right now, the scene renders with one light at the top, as we can see in the bunny or spheres. However, we want to be able to move this light around to demonstrate how the position of the light affects refraction. We also want to have multiple light sources (e.g. 2 area lights at the top, or 1 area light at the top and 1 area light at the bottom) and observe how the combined illumination will affect refraction. We may also try to add different kinds of lights after exploring the repository further, as we noticed some existing code that would be helpful in area_light.h and scene.cpp.
 
 **Step 2**: 
-- We want to try adding caustic effects to the walls submerged in water for a more realistic scene. We are unsure if we would be able to implement this in the dae file directly, or if we would need to create a scene in Unity that we would then apply code to. Right now, we plan to focus only on creating/adding to scenes within the dae files.
+- We want to try adding caustic effects to the walls submerged in water for a more realistic scene. We are unsure if we would be able to implement this in the dae file directly, or if we would need to create a scene in Unity that we would then apply code to. Another idea is to apply the concept from Homework 4 where we apply a texture to an image. If we implement this, we can also add in displacement mapping to simulate waves or the surface of the water better. Right now, we plan to focus only on creating/adding to scenes within the dae files.
 
 
 ## Schedule
@@ -59,7 +59,7 @@ We anticipate running into a few challenges during this project, the main one be
 
 **Week 4, April 28-May 2**
 - Finish up any tasks from above.
-- If time permits, try adding different/multiple light sources to the scene.
+- If time permits, try adding in any of the extensions listed in "what we hope to achieve".
 - Create project video, finalize webpage, and generate deliverable images.
 
 
