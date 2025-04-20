@@ -43,6 +43,7 @@ We became familiar with the .dae files by learning how to transform objects with
         <img src="images/checkpoint/cbcubeglassbunny.png" alt="img" style="width: 100%; height: auto; display: block;">
         <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Glass bunny behind glass wall</p>
     </div>
+    
 </div>
 
 ## How we adhered to our plan
