@@ -26,7 +26,7 @@ We became familiar with the .dae files by learning how to transform objects with
 
     <div style="text-align: center;">
         <img src="images/checkpoint/spheres_glass.png" alt="img" style="width: 100%; height: auto; display: block;">
-        <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Glass spheres (IOR=1.33) </p>
+        <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Glass spheres (IOR=1.45) </p>
     </div>
 
     <div style="text-align: center;">
