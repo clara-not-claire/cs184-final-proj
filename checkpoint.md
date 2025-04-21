@@ -1,11 +1,11 @@
 # CS 184 Final Project Milestone: Glass Half Full, Glass Half Empty
-Christine Zhang, Clara Hung, Kerrine Tai, and Ramya Chitturi
+Team 35: Christine Zhang, Clara Hung, Kerrine Tai, and Ramya Chitturi
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-Link to webpage: <a href="https://clara-not-claire.github.io/cs184-final-proj/">https://clara-not-claire.github.io/cs184-final-proj/</a>
+Link to project proposal and webpage: <a href="https://clara-not-claire.github.io/cs184-final-proj/">https://clara-not-claire.github.io/cs184-final-proj/</a>
 
 Link to slides: <a href="https://docs.google.com/presentation/d/1hpctgJlwToDg6AwSjs3SnDHkXQO7yKAh0wzfBWaUqJQ/edit?usp=sharing">https://docs.google.com/presentation/d/1hpctgJlwToDg6AwSjs3SnDHkXQO7yKAh0wzfBWaUqJQ/edit?usp=sharing</a>
 
@@ -43,7 +43,7 @@ We became familiar with the .dae files by learning how to transform objects with
         <img src="images/checkpoint/cbcubeglassbunny.png" alt="img" style="width: 100%; height: auto; display: block;">
         <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Glass bunny behind glass wall</p>
     </div>
-    
+
 </div>
 
 ## How we adhered to our plan
