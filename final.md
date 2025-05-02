@@ -16,7 +16,7 @@ Our project focused on rendering realistic scenes containing media with differen
 
 ## Technical Approach
 
-<!-- A 1-2 page summary of your technical approach, techniques used, algorithms implemented, etc. (use references to papers or other resources for further detail). Highlight how your approach varied from the references used (did you implement a subset, or did you change or enhance anything), the unique decisions you made and why. -->
+<!-- A 1-2 page summary of your technical approach, techniques used, algorithms implemented, etc. (use references to papers or other resources for further detail). Highlight how your approach varied frsom the references used (did you implement a subset, or did you change or enhance anything), the unique decisions you made and why. -->
 
 ### Refractive Materials
 
@@ -111,6 +111,10 @@ By modifying the `advanced_bsdf.cpp` and `pathtracer.cpp` files, we were able to
 
 To further experiment with varying surfaces and liquid levels, we created a model with by the bunny submerged in oil and water. The liquids are separated by a thin layer of air, as our refraction model assumes that one of the materials is air.
 
+Much of the work involving Blender comes from modeling the objects themselves. TODO: YAP ABOUT THE CUP AND WINE. For the water around the bunny, we imported the dae file into Blender, added a rectangular object representing water, and added a boolean modifier to subtract where the bunny was sitting in the water. To make the water look more realistic, we subdivided only the top surface of the water and manipulated the individual vertices. We used proportional editing on the vertices to make the water have a natural smooth feel. Just for fun, we also added a layer of glass in front of the bunny to make it look like the bunny was in an aquarium. 
+
+As for changing the materials in blender, we referenced the glass-effect already implemented and played around with different parameters to make it look more realistic. One of the most impactful parameters was actually the color, something we did not implement for this project. 
+
 TODO: TALK ABOUT TECHNICAL APPROACH FOR BLENDER/DAE FILES (feel free to modify the above)
 
 ### Problems Encountered & Lessons Learned
@@ -120,9 +124,7 @@ A description of lessons learned. -->
 
 As a result of our refraction implementation, our refraction model only works for interfaces between media where one of the media is air. This is because our `eta` variable in the implementation is either `ior / 1` or `1 / ior`, and we used 1 to assume that one of the media had an index of refraction of 1, i.e. one of the media was air. We were getting bugs when we tried to make boundaries between media like glass and water or water and oil - we would get strange artifacts and black splotches where we had these boundaries. Our fix for this was to insert a small gap of air between these media, and this was able to get rid of the artifacts.
 
-TODO: blender and collada challenges
-
-One lesson we learned is that it's sometimes easier to modify the .dae file directly than do everything in Blender. Some small things inlcuded changing the color of the water or repositioning the bunny/our scene to be more directly under the overhead area light to make some of our images better. Thus, it helped to learn how the position matrix worked and modify that directly, rather than moving everything in Blender and reimporting per minor change.
+One lesson we learned is that it's sometimes easier to modify the .dae file directly than do everything in Blender. Creating a scene and importing that scene proved difficult with lighting, positions of the objects, and many more. We ended up merging the background from the CBbunny file and adding in the objects we created in blender in the dae file directly. Some small things that were easier to do in blender were included changing the color of the water or repositioning the bunny/our scene to be more directly under the overhead area light to make some of our images better. Thus, it helped to learn how the position matrix worked and modify that directly, rather than moving everything in Blender and reimporting per minor change. It was frusterating that we could not see the specific issues with the dae files when we can't render the file, but we realzied that commenting out the node-id portion of the files helped because you could then see the specific object that was failing. 
 
 ## Results
 <!-- Your final images, animations, video of your system (whichever is relevant). You can include results that you think show off what you built but that you did not have time to go over on presentation day. -->
