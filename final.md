@@ -50,9 +50,7 @@ By modifying the `advanced_bsdf.cpp` and `pathtracer.cpp` files, we were able to
 
 To further experiment with varying surfaces and liquid levels, we created a model with by the bunny submerged in oil and water. The liquids are separated by a thin layer of air, as our refraction model assumes that one of the materials is air.
 
-Based on feedback on our project milestone, we implemented the next part of Project 3-2, microfacet materials, to add to our rendering of realistic scenes.
-
-In this part, we implemented isotropic rough conductors that reflect light using the microfacet BRDF function described in lecture,
+Based on feedback on our project milestone, we implemented the next part of Project 3-2, microfacet materials, to add to our rendering of realistic scenes. In this part, we implemented isotropic rough conductors that reflect light using the microfacet BRDF function described in lecture,
 
 $$
 f = \frac{F(\omega_i) G(\omega_o, \omega_i) D(h)}{4 (n \cdot w_o) (n \cdot w_i)}.
@@ -107,6 +105,8 @@ Thus, the final pdf that we want to use, sampling $\omega_i$ with respect to sol
 $$
 p_\omega(\omega_i) = \frac{p_\omega(h)}{4(\omega_i \cdot h)}.
 $$
+
+TODO: TALK ABOUT TECHNICAL APPROACH FOR BLENDER/DAE FILES
 
 ### Problems Encountered & Lessons Learned
 
