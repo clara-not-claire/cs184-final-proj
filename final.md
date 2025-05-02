@@ -231,12 +231,12 @@ Here are the Blender models rendered with our pathtracer.
     </div>
 
     <div style="text-align: center;">
-        <img src="images/final/bunny_oil_water_128_l8_m7.png" alt="img" style="width: 100%; height: auto; display: block;">
+        <img src="images/final/bunny_oil_water_128_l8_m7.png" alt="img" style="width: 150%; height: auto; display: block;">
         <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Bunny in oil and water layers, separated by air </p>
     </div>
 
     <div style="text-align: center;">
-        <img src="images/final/cbbunnyfront_glass_256_8.png" alt="img" style="width: 100%; height: auto; display: block;">
+        <img src="images/final/cbbunnyfront_glass_256_8_works.png" alt="img" style="width: 100%; height: auto; display: block;">
         <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Bunny behind glass </p>
     </div>
 
