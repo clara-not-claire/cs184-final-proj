@@ -129,17 +129,26 @@ One lesson we learned is that it's sometimes easier to modify the .dae file dire
 Additionally, we ran into multiple problems with Blender that ended up delaying our overall process with our project. However, we learned a lot from the Blender debugging process! These include:
 - Modern vs old software compatibility: using more modern software introduces tradeoffs.
     - At first, we tried using old Blender (2.74) to create our Blender models. However, the UI was difficult to work with, so we switched to Blender 4.4 instead. While modern Blender was easier to work with, we had to work with a different dae-file flow (detailed in the Ed post) and correct for bugs caused by this software incompatibility (detailed below).
+    - We first attempted to render our models without the updated collada file from the Ed post and discovered that the pathtracer would not detect any custom objects in our dae files.
 - Check the positioning of the camera and lights.
-    - Modern Blender changes the camera and light positions of the original CB dae file scenes. This difference led to poor rendering from our pathtracer, where the faces of our cup were all out of place (see image below). We were able to render the original `CBspheres.dae` without an issue, so we knew that the issue wasn't with our pathtracer. We then performed a `git diff` on the original `CBspheres.dae` file and our new dae files and discovered the shifted lights and cameras. We resolved the issue by copying over the camera and light parameters from the original dae files so the imaging conditions match what the pathtracer is expecting.
+    - Modern Blender changes the camera and light positions of the original CB dae file scenes. This difference led to poor rendering from our pathtracer, where the faces of our cup were all out of place. We were able to render the original `CBspheres.dae` without an issue, so we knew that the issue wasn't with our pathtracer. We then performed a `git diff` on the original `CBspheres.dae` file and our new dae files and discovered the shifted lights and cameras. We resolved the issue by copying over the camera and light parameters from the original dae files so the imaging conditions match what the pathtracer is expecting.
+    - Image 1 below shows a poorly rendered cup when the camera and area light coordinates do not match the original dae files. The rectangular chunks are the shape of the inner faces of the cup, which is a result of the coordinates not matching up with what the pathtracer expects.
 - Check the orientation of face normals.
     - When we first rendered our models, our dae files would not process properly and error with the geometry being "not manifold." This was due to the surface normals of our mesh not all being oriented in the same direction, which was especially tricky when it came to building the water inside of the cup, as well as the meniscus of the cup. To address this, we re-built our cup and wine glass model and carefully checked the surface normals of the model after every step so we did not miss any stray surface normals. To ensure they were all pointed in the outside direction and ensure our pathtracer could properly process the mesh, we used the `Normals > Recalculate Outside` command.
+    - Additionally, we had to make sure all the normals pointed on the OUTSIDE. Image 2 below shows a result when the surface normals are not oriented in the right direction.
 - Check for stray vertices.
     - Another error we encountered was having a mismatch in the number of vertices listed in the dae file and the actual number of vertices in the mesh. In this case, there would be more vertices listed than actually in the mesh. After reviewing the Blender documentation, we discovered this was due to stray vertices being created when we would cancel an extrusion or scaling in our model. To address this, we made sure to merge the vertices in our model every time we made a big operation. We do this by pressing the `m` key, choosing `Merge by Distance`, and using a distance of `0.00001 m`. This allowed us to remove any stray vertices that may interfere with our document processing. 
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px; padding: 20px; max-width: 1200px; margin: auto; align-items: center; justify-items: center;">
+   
     <div style="text-align: center;">
         <img src="images/blender/cup2.png" alt="img" style="width: 100%; height: auto; display: block;">
-        <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;">Poorly rendered cup</p>
+        <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;">1. Poorly rendered cup</p>
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/blender/wine0.png" alt="img" style="width: 100%; height: auto; display: block;">
+        <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;">2. Wine glass without correct surface normals</p>
     </div>
 </div>
 
