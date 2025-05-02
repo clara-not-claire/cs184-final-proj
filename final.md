@@ -18,6 +18,8 @@ Our project focused on rendering realistic scenes containing media with differen
 
 <!-- A 1-2 page summary of your technical approach, techniques used, algorithms implemented, etc. (use references to papers or other resources for further detail). Highlight how your approach varied from the references used (did you implement a subset, or did you change or enhance anything), the unique decisions you made and why. -->
 
+### Refractive Materials
+
 First, we implemented relevant parts of former Project 3-2 to render the mirror, glass, refraction, and microfacet BSDFs. We first implemented the mirror BSDF, and then we worked on refracting models. We implemented Snell's Law in spherical coordinates, where our `w_o` vector had coordinates:
 
 $$
@@ -46,9 +48,7 @@ $$
 \end{align*}
 $$
 
-By modifying the `advanced_bsdf.cpp` and `pathtracer.cpp` files, we were able to render existing .dae files with glass, water, copper, and gold surfaces. We then learned how to modify the CBbunny.dae file to change it to a refraction BSDF with IOR=1.33 to render it with water. The major way that our project diverged from and enhanced Project 3-2 by creating several scenes in Blender to render using our code, as well as experimenting with positioning and layers of different materials. We also used Blender to create a model of a wine glass with wine and a cup of water to see how our refractive model could apply to more real-world scenes.
-
-To further experiment with varying surfaces and liquid levels, we created a model with by the bunny submerged in oil and water. The liquids are separated by a thin layer of air, as our refraction model assumes that one of the materials is air.
+### Microfacet Materials
 
 Based on feedback on our project milestone, we implemented the next part of Project 3-2, microfacet materials, to add to our rendering of realistic scenes. In this part, we implemented isotropic rough conductors that reflect light using the microfacet BRDF function described in lecture,
 
@@ -74,7 +74,7 @@ $$
 
 Here, `eta` and `k` are `Vector3D` objects that represent indices of refraction for conductors and give the scalar values for `eta` and `k` at each of the wavelengths for R, G, and B.
 
-The last step was to importance sample the microfacet BRDF based on the shape of the Beckmann distribution for the normal distribution function for the microfacet. We sampled $\theta_h$ and $\phi_h$ according to probability density functions $p_\theta$ and $p_\phi$, then got the sampled microfacet normal $h$ and its pdf, and then reflected the $\omega_o$ over $h$ to get the incident light ray $\omega_i$.
+The last step was to importance sample the microfacet BRDF based on the shape of the Beckmann distribution for the normal distribution function for the microfacet. We sampled $$\theta_h$$ and $$\phi_h$$ according to probability density functions $$p_\theta$$ and $$p_\phi$$, then got the sampled microfacet normal $$h$$ and its pdf, and then reflected the $$\omega_o$$ over $$h$$ to get the incident light ray $$\omega_i$$.
 
 We used these pdfs, given in the spec and derived in the blog post by agraphicsguynotes in the references section.
 
@@ -94,19 +94,24 @@ $$
 \end{align*}
 $$
 
-where $r_1$ and $r_2$ are uniform random variables between 0 and 1. We calculated $h$ using spherical coordinates with the $\theta$ and $\phi$ that we got from sampling the pdfs above. Then, we got the sampled $\omega_i$ by reflecting $\omega_o$ over $h$. To calculate the pdf of sampling $h$ with respect to a solid angle, we made use of the pdfs that we had for $\theta$ and $\phi$, multiplying them and dividing by the solid angle integration factor $\sin \theta$:
+where $$r_1$$ and $$r_2$$ are uniform random variables between 0 and 1. We calculated $$h$$ using spherical coordinates with the $$\theta$$ and $$\phi$$ that we got from sampling the pdfs above. Then, we got the sampled $$\omega_i$$ by reflecting $$\omega_o$$ over $$h$$. To calculate the pdf of sampling $$h$$ with respect to a solid angle, we made use of the pdfs that we had for $$\theta$$ and $$\phi$$, multiplying them and dividing by the solid angle integration factor $$\sin \theta$$:
 
 $$
 p_\omega(h) = \frac{p_\theta(\theta_h) \cdot p_\phi(\phi_h)}{\sin(\theta_h)}.
 $$
 
-Thus, the final pdf that we want to use, sampling $\omega_i$ with respect to solid angle, is:
+Thus, the final pdf that we want to use, sampling $$\omega_i$$ with respect to solid angle, is:
 
 $$
 p_\omega(\omega_i) = \frac{p_\omega(h)}{4(\omega_i \cdot h)}.
 $$
 
-TODO: TALK ABOUT TECHNICAL APPROACH FOR BLENDER/DAE FILES
+### Blender
+By modifying the `advanced_bsdf.cpp` and `pathtracer.cpp` files, we were able to render existing .dae files with glass, water, copper, and gold surfaces. We then learned how to modify the CBbunny.dae file to change it to a refraction BSDF with IOR=1.33 to render it with water. The major way that our project diverged from and enhanced Project 3-2 by creating several scenes in Blender to render using our code, as well as experimenting with positioning and layers of different materials. We also used Blender to create a model of a wine glass with wine and a cup of water to see how our refractive model could apply to more real-world scenes.
+
+To further experiment with varying surfaces and liquid levels, we created a model with by the bunny submerged in oil and water. The liquids are separated by a thin layer of air, as our refraction model assumes that one of the materials is air.
+
+TODO: TALK ABOUT TECHNICAL APPROACH FOR BLENDER/DAE FILES (feel free to modify the above)
 
 ### Problems Encountered & Lessons Learned
 
