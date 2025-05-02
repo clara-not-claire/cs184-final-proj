@@ -17,6 +17,7 @@ Our project focused on rendering realistic scenes containing media with differen
 ## Technical Approach
 
 <!-- A 1-2 page summary of your technical approach, techniques used, algorithms implemented, etc. (use references to papers or other resources for further detail). Highlight how your approach varied frsom the references used (did you implement a subset, or did you change or enhance anything), the unique decisions you made and why. -->
+For our project, we wanted to combine the physics we learned in our E&M class with the graphics pipeline from CS184. We noticed that the existing Homework 3 Pathtracer cannot realistically render light-matter interactions of materials with different refractive indices. Thus, using Homework 3 Pathtracer as a starting point, we added refractive index modeling to our raytracer, allowing us to realistically render scenes layers of different materials, such as the classic “straw in glass of water” effect. We created custom scenes in Blender to showcase this feature!  
 
 ### Refractive Materials
 
@@ -258,7 +259,7 @@ We used the following Blender tutorials to build our models:
 
 All members contributed to the project significantly.
 
-- Christine:
-- Clara: Blender wine glass, straw, and water cup models. Dae file scene preparation; material modelling.
-- Kerrine:
-- Ramya:
+- Christine: Implemented objects with mirror, refraction, glass, and microfacet materials. Modified .dae files to test this; helped debug final Blender renderings
+- Clara: Blender wine glass, straw, and water cup models with extensive debugging. Constructed final scenes with material modelling in .dae files.
+- Kerrine: Used blender to render all images related to the bunny. Modified dae files to test different refractions
+- Ramya: Implemented objects with mirror, refraction, glass, and microfacet materials. Modified .dae files to test this; helped debug final Blender renderings.
