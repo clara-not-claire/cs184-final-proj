@@ -250,6 +250,6 @@ We used the following Blender tutorials to build our models:
 All members contributed to the project significantly.
 
 - Christine:
-- Clara:
+- Clara: Blender wine glass, straw, and water cup models. Dae file scene preparation; material modelling.
 - Kerrine:
 - Ramya:
