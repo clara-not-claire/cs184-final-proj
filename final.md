@@ -236,7 +236,7 @@ Here are the Blender models rendered with our pathtracer.
     </div>
 
     <div style="text-align: center;">
-        <img src="images/final/bunny_front_glass_WORKS.png" alt="img" style="width: 100%; height: auto; display: block;">
+        <img src="images/final/cbbunnyfront_glass_256_8.png" alt="img" style="width: 100%; height: auto; display: block;">
         <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Bunny behind glass </p>
     </div>
 
