@@ -226,7 +226,7 @@ Here are the Blender models rendered with our pathtracer.
     </div>
 
     <div style="text-align: center;">
-        <img src="images/final/cbbunnywave_WORKS.png" alt="img" style="width: 100%; height: auto; display: block;">
+        <img src="images/final/cbbunnywave_512_32_WORKS.png" alt="img" style="width: 100%; height: auto; display: block;">
         <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Bunny in water with waves </p>
     </div>
 
