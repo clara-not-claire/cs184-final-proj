@@ -30,13 +30,13 @@ $$
 
 where the plus/minus sign on the z coordinate depends on whether the ray starts out inside (negative) or outside (positive) of the object. Thus, we check the sign of the z coordinate of `w_o` to see whether the ray is entering or exiting the object - if it's negative, then the ray is exiting the object, and we define `eta` to be `ior / 1` where 1 is the index of refraction of air. If it's positive, then the ray is entering the object, and we define `eta` to be `1 / ior`, and we flip the sign for the resulting z coordinate of `w_i`.
 
-We use this `eta` variable to simplify Snell's law, where we can then write $\sin \theta' = \eta \sin \theta$. Using the fact that $\sin^2 \theta + \cos^2 \theta = 1$ twice, we get
+We use this `eta` variable to simplify Snell's law, where we can then write $$\sin \theta' = \eta \sin \theta$$. Using the fact that $$\sin^2 \theta + \cos^2 \theta = 1$$ twice, we get
 
 $$ \cos \theta' = \sqrt{1-\eta^2(1-\cos^2\theta)}. $$
 
 This gives the angle for the ray `w_i` compared to the z axis. If the value under the square root is negative, then there is no refracted light ray, and we get total internal reflection.
 
-Using this result for $\cos \theta'$ along with the spherical coordinate result for $\sin \theta'$, we get 
+Using this result for $$\cos \theta'$$ along with the spherical coordinate result for $$\sin \theta'$$, we get 
 
 $$
 \begin{align*}
