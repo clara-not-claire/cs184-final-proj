@@ -80,8 +80,8 @@ We used these pdfs, given in the spec and derived in the blog post by agraphicsg
 
 $$
 \begin{align*}
-p_\theta(\theta_h) = \frac{2 \sin \theta_h}{\alpha^2 \cos^3 \theta_h} e^{-\tan^2 \theta_h/\alpha^2} \\
-p_\phi(\phi_h) = \frac{1}{2\pi}
+p_\theta(\theta_h) &= \frac{2 \sin \theta_h}{\alpha^2 \cos^3 \theta_h} e^{-\tan^2 \theta_h/\alpha^2} \\
+p_\phi(\phi_h) &= \frac{1}{2\pi}
 \end{align*}
 $$
 
@@ -89,8 +89,8 @@ We used the inversion method to sample from these pdfs, with results given as:
 
 $$
 \begin{align*}
-\theta_h = \arctan \sqrt{-\alpha^2 \ln(1 - r_1)} \\
-\phi_h = 2\pi r_2
+\theta_h &= \arctan \sqrt{-\alpha^2 \ln(1 - r_1)} \\
+\phi_h &= 2\pi r_2
 \end{align*}
 $$
 
