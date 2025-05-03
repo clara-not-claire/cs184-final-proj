@@ -5,6 +5,8 @@ Team 35: Christine Zhang, Clara Hung, Kerrine Tai, and Ramya Chitturi
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+Link to project webpage: <a href="https://clara-not-claire.github.io/cs184-final-proj/">https://clara-not-claire.github.io/cs184-final-proj/</a>
+
 Link to video: <a href="">[Google Drive](https://drive.google.com/file/d/1Lb1Buqc7jZfk04vcnft47B0Vlm7NJdcy/view?usp=sharing)</a>
 
 ## Abstract
