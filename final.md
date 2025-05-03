@@ -9,6 +9,8 @@ Link to project webpage: <a href="https://clara-not-claire.github.io/cs184-final
 
 Link to video: <a href="">[Google Drive](https://drive.google.com/file/d/1Lb1Buqc7jZfk04vcnft47B0Vlm7NJdcy/view?usp=sharing)</a>
 
+Link to slides: <a href="https://docs.google.com/presentation/d/1nr20vbBR76NHnYtPcziv3ZXphbBa-cQBm3i0KxVUlJ0/edit?usp=sharing">https://docs.google.com/presentation/d/1nr20vbBR76NHnYtPcziv3ZXphbBa-cQBm3i0KxVUlJ0/edit?usp=sharing</a>
+
 ## Abstract
 
 <!-- A paragraph summary of the entire project. -->
