@@ -5,7 +5,11 @@ Team 35: Christine Zhang, Clara Hung, Kerrine Tai, and Ramya Chitturi
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+Link to project webpage: <a href="https://clara-not-claire.github.io/cs184-final-proj/">https://clara-not-claire.github.io/cs184-final-proj/</a>
+
 Link to video: <a href="">[Google Drive](https://drive.google.com/file/d/1Lb1Buqc7jZfk04vcnft47B0Vlm7NJdcy/view?usp=sharing)</a>
+
+Link to slides: <a href="https://docs.google.com/presentation/d/1nr20vbBR76NHnYtPcziv3ZXphbBa-cQBm3i0KxVUlJ0/edit?usp=sharing">https://docs.google.com/presentation/d/1nr20vbBR76NHnYtPcziv3ZXphbBa-cQBm3i0KxVUlJ0/edit?usp=sharing</a>
 
 ## Abstract
 
@@ -116,7 +120,7 @@ Much of the work involving Blender comes from modeling the objects themselves. S
 
 For the wine glass, we shaped a cylinder object into the general shape of a wine glass. We created the wine inside the cup by making a copy of the original wine glass and using the interior faces as the shape of the wine, extruded the top surface ever so slightly to form a meniscus, and grid filled the surface for a smoother mesh. Then, we used Shade Smooth as well as Catmull-Clarck subdivision surfaces to make the wine glass appear smooth. The water cup followed a similar process, however, we added extra edge loops at the lip of the cup to help create a rounder, more realistic-looking cup lip. For the water around the bunny, we imported the dae file into Blender, added a rectangular object representing water, and added a boolean modifier to subtract where the bunny was sitting in the water. To make the water look more realistic, we subdivided only the top surface of the water and manipulated the individual vertices. We used proportional editing on the vertices to make the water have a natural smooth feel. Just for fun, we also added a layer of glass in front of the bunny to make it look like the bunny was in an aquarium. 
 
-As for changing the materials in blender, we referenced the glass-effect already implemented and the bsdf properties in Blender and its documentation to tune our parameters such that our modeled materials are realistic. One of the most impactful parameters was actually the color, something we did not implement for this project. 
+As for changing the materials in blender, we referenced the glass-effect already implemented and the bsdf properties in Blender and its documentation to tune our parameters such that our modeled materials are realistic. One of the most impactful parameters was actually the color of the liquids. 
 
 ### Problems Encountered & Lessons Learned
 
@@ -125,7 +129,7 @@ A description of lessons learned. -->
 
 As a result of our refraction implementation, our refraction model only works for interfaces between media where one of the media is air. This is because our `eta` variable in the implementation is either `ior / 1` or `1 / ior`, and we used 1 to assume that one of the media had an index of refraction of 1, i.e. one of the media was air. We were getting bugs when we tried to make boundaries between media like glass and water or water and oil - we would get strange artifacts and black splotches where we had these boundaries. Our fix for this was to insert a small gap of air between these media, and this was able to get rid of the artifacts.
 
-One lesson we learned is that it's sometimes easier to modify the .dae file directly than do everything in Blender. Creating a scene and importing that scene proved difficult with lighting, positions of the objects, and many more. We ended up merging the background from the CBbunny file and adding in the objects we created in blender in the dae file directly. Some small things that were easier to do in blender were included changing the color of the water or repositioning the bunny/our scene to be more directly under the overhead area light to make some of our images better. Thus, it helped to learn how the position matrix worked and modify that directly, rather than moving everything in Blender and reimporting per minor change. It was frusterating that we could not see the specific issues with the dae files when we can't render the file, but we realzied that commenting out the node-id portion of the files helped because you could then see the specific object that was failing. 
+One lesson we learned is that it's sometimes easier to modify the .dae file directly than do everything in Blender. Creating a scene and importing that scene proved difficult with lighting, positions of the objects, and many more. We ended up merging the background from the CBbunny file and adding in the objects we created in blender in the dae file directly. Some small things that were easier to do in Blender were changing the color of the water or repositioning the bunny/our scene to be more directly under the overhead area light to make some of our images better. Thus, it helped to learn how the position matrix worked and modify that directly, rather than moving everything in Blender and reimporting per minor change. It was frusterating that we could not see the specific issues with the dae files when we can't render the file, but we realized that commenting out the node-id portion of the files helped because you could then see the specific object that was failing. 
 
 Additionally, we ran into multiple problems with Blender that ended up delaying our overall process with our project. However, we learned a lot from the Blender debugging process! These include:
 - Modern vs old software compatibility: using more modern software introduces tradeoffs.
@@ -200,9 +204,7 @@ Here are the models we created in Blender! Our two main models werre creating a 
 </div>
 
 
-Here are the Blender models rendered with our pathtracer.
-
-[christine: wrote this sentence but put it where appropriate] We changed the surface of the water in the bunny image to be wavy to simulate a real-world water surface. 
+Here are the Blender models rendered with our pathtracer. We changed the surface of the water in the bunny image to be wavy to simulate a real-world water surface. 
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px; padding: 20px; max-width: 1200px; margin: auto; align-items: center; justify-items: center;">
 
@@ -238,7 +240,7 @@ Here are the Blender models rendered with our pathtracer.
 
     <div style="text-align: center;">
         <img src="images/final/cbbunnyfront_glass_256_8_works.png" alt="img" style="width: 100%; height: auto; display: block;">
-        <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Bunny behind glass </p>
+        <p style="margin-top: 5px; font-size: 14px; font-weight: bold; color: #333;"> Bunny behind glass (in aquarium) </p>
     </div>
 
 </div>
